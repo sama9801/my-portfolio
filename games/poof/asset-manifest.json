@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.0aec4186.css",
-    "main.js": "/static/js/main.6a2610b0.js",
-    "static/js/386.b49a1af9.chunk.js": "/static/js/386.b49a1af9.chunk.js",
-    "static/js/453.6a62adc0.chunk.js": "/static/js/453.6a62adc0.chunk.js",
-    "index.html": "/index.html",
-    "main.0aec4186.css.map": "/static/css/main.0aec4186.css.map",
-    "main.6a2610b0.js.map": "/static/js/main.6a2610b0.js.map",
-    "386.b49a1af9.chunk.js.map": "/static/js/386.b49a1af9.chunk.js.map",
-    "453.6a62adc0.chunk.js.map": "/static/js/453.6a62adc0.chunk.js.map"
+    "main.css": "/games/poof/static/css/main.0aec4186.css",
+    "main.js": "/games/poof/static/js/main.aaf5011b.js",
+    "static/js/386.b49a1af9.chunk.js": "/games/poof/static/js/386.b49a1af9.chunk.js",
+    "static/js/453.6a62adc0.chunk.js": "/games/poof/static/js/453.6a62adc0.chunk.js",
+    "index.html": "/games/poof/index.html",
+    "main.0aec4186.css.map": "/games/poof/static/css/main.0aec4186.css.map",
+    "main.aaf5011b.js.map": "/games/poof/static/js/main.aaf5011b.js.map",
+    "386.b49a1af9.chunk.js.map": "/games/poof/static/js/386.b49a1af9.chunk.js.map",
+    "453.6a62adc0.chunk.js.map": "/games/poof/static/js/453.6a62adc0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0aec4186.css",
-    "static/js/main.6a2610b0.js"
+    "static/js/main.aaf5011b.js"
   ]
 }
