@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/games/poof/static/css/main.0aec4186.css",
-    "main.js": "/games/poof/static/js/main.60c49218.js",
+    "main.js": "/games/poof/static/js/main.7ca5227f.js",
     "static/js/386.b49a1af9.chunk.js": "/games/poof/static/js/386.b49a1af9.chunk.js",
     "static/js/453.6a62adc0.chunk.js": "/games/poof/static/js/453.6a62adc0.chunk.js",
     "index.html": "/games/poof/index.html",
     "main.0aec4186.css.map": "/games/poof/static/css/main.0aec4186.css.map",
-    "main.60c49218.js.map": "/games/poof/static/js/main.60c49218.js.map",
+    "main.7ca5227f.js.map": "/games/poof/static/js/main.7ca5227f.js.map",
     "386.b49a1af9.chunk.js.map": "/games/poof/static/js/386.b49a1af9.chunk.js.map",
     "453.6a62adc0.chunk.js.map": "/games/poof/static/js/453.6a62adc0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0aec4186.css",
-    "static/js/main.60c49218.js"
+    "static/js/main.7ca5227f.js"
   ]
 }
