@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Plus+Jakarta+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-container": "#6d28d9",
+                    "tertiary-fixed-dim": "#ffb0cd",
+                    "primary-fixed-dim": "#d3bbff",
+                    "tertiary-container": "#ab0467",
+                    "inverse-on-surface": "#edf0ff",
+                    "primary": "#5300b7",
+                    "on-primary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "surface-container": "#e9edff",
+                    "surface": "#f9f9ff",
+                    "on-error-container": "#93000a",
+                    "tertiary": "#81004c",
+                    "surface-bright": "#f9f9ff",
+                    "inverse-surface": "#293040",
+                    "secondary-fixed-dim": "#4fdbc8",
+                    "surface-container-highest": "#dce2f7",
+                    "surface-container-high": "#e1e8fd",
+                    "secondary-fixed": "#71f8e4",
+                    "on-tertiary-fixed": "#3e0022",
+                    "surface-variant": "#dce2f7",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed": "#ffd9e4",
+                    "surface-container-low": "#f1f3ff",
+                    "outline-variant": "#ccc3d7",
+                    "on-tertiary-container": "#ffbcd4",
+                    "outline": "#7b7486",
+                    "on-surface": "#141b2b",
+                    "on-secondary-fixed": "#00201c",
+                    "on-primary-fixed": "#250059",
+                    "on-primary-container": "#dac5ff",
+                    "error": "#ba1a1a",
+                    "secondary-container": "#6df5e1",
+                    "on-tertiary-fixed-variant": "#8c0053",
+                    "inverse-primary": "#d3bbff",
+                    "on-primary-fixed-variant": "#5b00c5",
+                    "surface-dim": "#d3daef",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed": "#ebddff",
+                    "background": "#f9f9ff",
+                    "secondary": "#006b5f",
+                    "on-secondary-fixed-variant": "#005048",
+                    "on-secondary-container": "#006f64",
+                    "on-background": "#141b2b",
+                    "on-surface-variant": "#4a4455",
+                    "surface-tint": "#7331df",
+                    "on-tertiary": "#ffffff",
+                    "error-container": "#ffdad6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "stack-gap": "32px",
+                    "container-padding": "24px",
+                    "section-gap": "120px",
+                    "grid-gutter": "24px",
+                    "max-width": "1280px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Syne"],
+                    "headline-lg-mobile": ["Syne"],
+                    "display-xl": ["Syne"],
+                    "headline-lg": ["Syne"],
+                    "label-sm": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "label-bold": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "display-xl": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-bold": ["14px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .soft-brutalist-border { border: 2px solid #141b2b; }
+        .soft-brutalist-shadow { box-shadow: 4px 4px 0px 0px #141b2b; }
+        .soft-brutalist-card-hover:hover { transform: translate(-4px, -4px); box-shadow: 8px 8px 0px 0px #141b2b; }
+        .active-filter { background-color: #6d28d9; color: #dac5ff; border-color: #141b2b; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<nav class="sticky top-0 w-full z-[100] bg-surface/80 backdrop-blur-md border-b-2 border-on-surface">
+<div class="flex justify-between items-center px-grid-gutter py-4 max-w-max-width mx-auto">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer">menu</span>
+<span class="font-headline-md text-headline-md font-bold text-on-surface">Sama</span>
+</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant font-label-bold text-label-bold hover:text-secondary transition-colors" href="#">Home</a>
+<a class="text-primary font-bold font-label-bold text-label-bold" href="#">Work</a>
+<a class="text-on-surface-variant font-label-bold text-label-bold hover:text-secondary transition-colors" href="#">Games</a>
+<a class="text-on-surface-variant font-label-bold text-label-bold hover:text-secondary transition-colors" href="#">Blog</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer" data-weight="fill">account_circle</span>
+</div>
+</div>
+</nav>
+<main class="max-w-max-width mx-auto px-grid-gutter py-stack-gap min-h-screen">
+<!-- Hero Section -->
+<header class="mb-section-gap pt-stack-gap">
+<h1 class="font-display-xl text-display-xl mb-6 text-on-surface max-w-3xl">Selected <span class="text-primary italic">Works</span> &amp; Experiments.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">A curated collection of design projects exploring the intersection of soft brutalism, playful interaction, and high-performance user experiences.</p>
+</header>
+<!-- Filter System -->
+<section class="mb-12 flex flex-wrap gap-4 items-center">
+<button class="active-filter px-6 py-3 rounded-full font-label-bold text-label-bold soft-brutalist-border transition-all">All Projects</button>
+<button class="bg-surface-container-low px-6 py-3 rounded-full font-label-bold text-label-bold soft-brutalist-border border-transparent hover:border-on-surface transition-all">UX Design</button>
+<button class="bg-surface-container-low px-6 py-3 rounded-full font-label-bold text-label-bold soft-brutalist-border border-transparent hover:border-on-surface transition-all">UI Systems</button>
+<button class="bg-surface-container-low px-6 py-3 rounded-full font-label-bold text-label-bold soft-brutalist-border border-transparent hover:border-on-surface transition-all">Branding</button>
+<button class="bg-surface-container-low px-6 py-3 rounded-full font-label-bold text-label-bold soft-brutalist-border border-transparent hover:border-on-surface transition-all">Case Studies</button>
+</section>
+<!-- 3-Column Work Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-grid-gutter">
+<!-- Project Card 1 -->
+<article class="bg-surface-container-lowest soft-brutalist-border rounded-lg overflow-hidden soft-brutalist-shadow soft-brutalist-card-hover transition-all duration-300 group cursor-pointer">
+<div class="h-64 overflow-hidden border-b-2 border-on-surface relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A vibrant 3D abstract composition with soft purple and teal glass orbs floating in a high-contrast minimalist space. The lighting is bright and cheerful, echoing a soft brutalist aesthetic with clean lines and playful geometry. The mood is energetic and professionally creative, utilizing a palette of deep purple and mint green." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3dZ3o_EzFj1Iv2PjzwdGb8DJj039UlH_ar-saCqjMG9-dvTG7yBmzJUxb8x6dvllFKFMjUKmOFSeVQr0Jpt8LQBzSnkxHQlhbWAXQ6y-1IlRfM5cEV2nTRHiIJ5OOLPEv33-dRqXewJR1Yoj5EW6s8zR-8li5VNsgM326qbibcA6YxaRCJqsgHFXnnnP7AcIWi2dnilrE7kU4hBTdx9XfjbZw54UJDiVqhbowCqp_XwjXs8_g5iVidS9PquQDiNcGKpYfuyRucfA"/>
+<div class="absolute top-4 right-4 bg-secondary-container soft-brutalist-border px-3 py-1 rounded-full">
+<span class="font-label-sm text-label-sm text-on-secondary-container">Featured</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-primary/10 text-primary border border-primary px-3 py-1 rounded-full font-label-sm text-label-sm">UX</span>
+<span class="bg-secondary/10 text-secondary border border-secondary px-3 py-1 rounded-full font-label-sm text-label-sm">Case study</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2 group-hover:text-primary transition-colors">Nova Fintech App</h3>
+<p class="text-on-surface-variant mb-6">Revolutionizing digital banking for Gen Z through tactile interfaces and vibrant gamification logic.</p>
+<div class="flex items-center gap-2 text-primary font-label-bold text-label-bold group-hover:gap-4 transition-all">
+                        View Project <span class="material-symbols-outlined">arrow_forward</span>
+</div>
+</div>
+</article>
+<!-- Project Card 2 -->
+<article class="bg-surface-container-lowest soft-brutalist-border rounded-lg overflow-hidden soft-brutalist-shadow soft-brutalist-card-hover transition-all duration-300 group cursor-pointer">
+<div class="h-64 overflow-hidden border-b-2 border-on-surface relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Modern branding design showcasing bold typography and high-contrast black and yellow elements on a studio background. The visual style is crisp and tactile, featuring physical mockups of stationery with thick cardstock textures. The lighting is dramatic yet soft, emphasizing the premium quality of the corporate identity system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBJs5Ha8ufTCz0hjVK2IYPHTLajOY_imMYC2Kc9ApvjA2wxeuReyDJEbfgrmFkjdveE33NaknsllasXkghOzRLrghD6SfMBCsXPg4doNeU9bCh4KcPYIKyik-8xw6HmI24XK4oybRKzaTzY45BFJ5pNkdfEBlLuxDIdO82hc4D10OQgDKoEPlhRZOUjIDYmpoFKo58lK6KxOjXqaMFRsP8qq4IoZKhq9MAWTLjLdlIcDjEwiw9hsnUcZ3ueF_HlFwIAb-JY5-povM"/>
+</div>
+<div class="p-6">
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-tertiary/10 text-tertiary border border-tertiary px-3 py-1 rounded-full font-label-sm text-label-sm">Branding</span>
+<span class="bg-primary/10 text-primary border border-primary px-3 py-1 rounded-full font-label-sm text-label-sm">UI</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2 group-hover:text-primary transition-colors">Vanguard Identity</h3>
+<p class="text-on-surface-variant mb-6">A comprehensive visual system for a high-performance design agency using soft brutalist principles.</p>
+<div class="flex items-center gap-2 text-primary font-label-bold text-label-bold group-hover:gap-4 transition-all">
+                        View Project <span class="material-symbols-outlined">arrow_forward</span>
+</div>
+</div>
+</article>
+<!-- Project Card 3 -->
+<article class="bg-surface-container-lowest soft-brutalist-border rounded-lg overflow-hidden soft-brutalist-shadow soft-brutalist-card-hover transition-all duration-300 group cursor-pointer">
+<div class="h-64 overflow-hidden border-b-2 border-on-surface relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A clean and professional user interface design displayed on a sleek smartphone. The design features a light-mode layout with deep purple buttons and plenty of negative space. The aesthetic is modern and human-centric, focusing on ease of use and visual clarity in a studio setting with bright ambient light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnLPMxMq5AbIJRhGNX-QGU5Xd__8iv8SGhuibnjjobP4BeaFIxXQCGHHUEXImbKX0JI980GnZerxO1kfLj-RgYxTX-BJLeEWUYvh738X4uBmUYAVekHRYvS3A4Wm3PG49lAj-Y8Kqyu1Y_COhiH2apHLSfOiwGdqATYZKKACMlEFU1GTWXkxh8oTx0G-OnD3fGEJkDCuYsyba3a_q8MgsTgiVvOEdqLcBz_o2oKESV73Cmusnz2LKAZWxEiyiOG8xqTa9cbKVNOHo"/>
+</div>
+<div class="p-6">
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-secondary/10 text-secondary border border-secondary px-3 py-1 rounded-full font-label-sm text-label-sm">UI Systems</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2 group-hover:text-primary transition-colors">Sphere Design System</h3>
+<p class="text-on-surface-variant mb-6">Scalable component library for complex SaaS dashboards, focusing on accessibility and clarity.</p>
+<div class="flex items-center gap-2 text-primary font-label-bold text-label-bold group-hover:gap-4 transition-all">
+                        View Project <span class="material-symbols-outlined">arrow_forward</span>
+</div>
+</div>
+</article>
+<!-- Project Card 4 -->
+<article class="bg-surface-container-lowest soft-brutalist-border rounded-lg overflow-hidden soft-brutalist-shadow soft-brutalist-card-hover transition-all duration-300 group cursor-pointer">
+<div class="h-64 overflow-hidden border-b-2 border-on-surface relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A futuristic e-commerce website layout displayed on a high-resolution desktop monitor. The site utilizes a bold, asymmetrical grid with large typography and colorful product photography. The overall style is playful and tactile, featuring thick borders and soft shadows against a crisp white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyAlI0do1pmk6gdex2eneRC-1PTg1U7kcurWunqD3WBeJaPmjAcs-eiei2o4V6Jwf6P8rW4bxL8w0oXiWdfnIPkh0OwC7G04eNkm7Dw-6RQVahBcfy_02StMeoHh6iMwoQu28SSDoESbShYEFuAvCv8PDbY6kgTZMVqKTCpR5eGFclxW59pfFSQIWvYTQSLdKGKJ_clfgTYLEK70v4_9wB8gNaEnOird8qnZyqAekt3sTOqlCy8rUHkLQpDw1f_byDEQRKDZE7Srg"/>
+</div>
+<div class="p-6">
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-primary/10 text-primary border border-primary px-3 py-1 rounded-full font-label-sm text-label-sm">UX</span>
+<span class="bg-tertiary/10 text-tertiary border border-tertiary px-3 py-1 rounded-full font-label-sm text-label-sm">UI</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2 group-hover:text-primary transition-colors">Kinetic Commerce</h3>
+<p class="text-on-surface-variant mb-6">Reimagining the shopping experience with motion-heavy interaction models and bold layouts.</p>
+<div class="flex items-center gap-2 text-primary font-label-bold text-label-bold group-hover:gap-4 transition-all">
+                        View Project <span class="material-symbols-outlined">arrow_forward</span>
+</div>
+</div>
+</article>
+<!-- Project Card 5 -->
+<article class="bg-surface-container-lowest soft-brutalist-border rounded-lg overflow-hidden soft-brutalist-shadow soft-brutalist-card-hover transition-all duration-300 group cursor-pointer">
+<div class="h-64 overflow-hidden border-b-2 border-on-surface relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="An artistic digital design portfolio page featuring large headline text and a 3-column grid of creative project thumbnails. The lighting is soft and even, highlighting a clean, light-mode interface with vibrant accents. The mood is sophisticated yet energetic, perfectly representing a professional designer's aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAaI3rCoSw04zCpB9SIUuREOVE4-YFjMNHafhIZqwgdACsS9Fv9-V_Mx2tveyQSVjsYjS1LuFP6EtHwM5djKovGhtQdhdMXgr_k1L7K8MGbCtK4GRTwYFmFQoluoHLfTPQ2vwS6NMnB4DyKLOlAfTeWDkx6WF__2w7N1D-qYru6jUhr1otM-xHpFNW_TbvdjY9W8qWYXLbFsB-fj3JAFRRBeLhmHh_i5yhD6LBQrGv5sYVeN78AiwC1eLPR0kd9JuMXDXJCN9kCuk"/>
+</div>
+<div class="p-6">
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-tertiary/10 text-tertiary border border-tertiary px-3 py-1 rounded-full font-label-sm text-label-sm">Case study</span>
+<span class="bg-secondary/10 text-secondary border border-secondary px-3 py-1 rounded-full font-label-sm text-label-sm">Branding</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2 group-hover:text-primary transition-colors">Solstice Brand Evolution</h3>
+<p class="text-on-surface-variant mb-6">A deep dive into the rebranding of a sustainable energy startup, from research to implementation.</p>
+<div class="flex items-center gap-2 text-primary font-label-bold text-label-bold group-hover:gap-4 transition-all">
+                        View Project <span class="material-symbols-outlined">arrow_forward</span>
+</div>
+</div>
+</article>
+<!-- Project Card 6 -->
+<article class="bg-surface-container-lowest soft-brutalist-border rounded-lg overflow-hidden soft-brutalist-shadow soft-brutalist-card-hover transition-all duration-300 group cursor-pointer">
+<div class="h-64 overflow-hidden border-b-2 border-on-surface relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A collection of colorful application icons designed in a modern, semi-flat style with subtle gradients and strong outlines. The icons are presented on a clean grid against a light grey surface. The lighting is overhead and soft, creating a sense of physical presence for each digital element. Vibrant colors like amber, pink, and teal pop from the screen." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHPqTAfoIJ3vvxDyVREoBguJePuU_u991-cX1mmNprz09eW_qkmW4piyg4EqRRRTOGvrLKREi6RXGg4r_-v5j1fu0bwE-eG7Fwxw4Dqts9Rb2gd6MGZLmG-DOm-JRIl_ExlpjdKL6JQQLkc9gLKt0ijViFIBeDeGFgzwdJjYg0garMaQJEyOVgY65gbVHt7yvjzSD540rP_wpdeuP17Ze3c-hu0qG8WjhoXbcSGtuoxAhAapE_W6Zj5ODJDuXftdco5-dqLmqIgEo"/>
+</div>
+<div class="p-6">
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-primary/10 text-primary border border-primary px-3 py-1 rounded-full font-label-sm text-label-sm">UI Systems</span>
+<span class="bg-secondary/10 text-secondary border border-secondary px-3 py-1 rounded-full font-label-sm text-label-sm">Branding</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2 group-hover:text-primary transition-colors">Icono Icon Set</h3>
+<p class="text-on-surface-variant mb-6">An open-source library of 500+ geometric icons designed for accessibility and high-contrast themes.</p>
+<div class="flex items-center gap-2 text-primary font-label-bold text-label-bold group-hover:gap-4 transition-all">
+                        View Project <span class="material-symbols-outlined">arrow_forward</span>
+</div>
+</div>
+</article>
+</section>
+<!-- CTA Section -->
+<section class="mt-section-gap mb-stack-gap text-center bg-primary-container soft-brutalist-border p-12 rounded-lg text-on-primary-container relative overflow-hidden">
+<div class="relative z-10">
+<h2 class="font-headline-lg text-headline-lg mb-6">Ready to start something <span class="text-secondary-container">bold</span>?</h2>
+<p class="font-body-lg text-body-lg mb-10 max-w-xl mx-auto opacity-90">Currently accepting new projects for Q3 2024. Let's build something people will remember.</p>
+<a class="inline-flex items-center gap-3 bg-secondary-container text-on-secondary-container px-10 py-5 rounded-full font-label-bold text-label-bold soft-brutalist-border hover:-translate-y-1 hover:bg-white transition-all" href="#">
+                    Get in touch <span class="material-symbols-outlined">mail</span>
+</a>
+</div>
+<div class="absolute top-0 right-0 p-8 opacity-10">
+<span class="material-symbols-outlined text-[200px]" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-lg bg-surface-container border-t-2 border-on-surface mt-section-gap">
+<div class="flex flex-col md:flex-row justify-between items-center px-grid-gutter py-stack-gap max-w-max-width mx-auto">
+<div class="mb-8 md:mb-0">
+<span class="font-headline-md text-headline-md text-on-surface font-bold">Sama</span>
+<p class="text-on-surface-variant font-body-md text-body-md mt-2">© 2024 Sama. Crafted with imagination.</p>
+</div>
+<div class="flex gap-8">
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-tertiary transition-all hover:-translate-y-1 transform" href="#">Twitter</a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-tertiary transition-all hover:-translate-y-1 transform" href="#">Dribbble</a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-tertiary transition-all hover:-translate-y-1 transform" href="#">LinkedIn</a>
+</div>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 bg-surface/90 backdrop-blur-lg border-t-2 border-on-surface shadow-[0_-4px_0_0_rgba(0,0,0,0.05)]">
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-bold text-label-bold">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 border-2 border-on-surface scale-95 transition-transform duration-100">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="font-label-bold text-label-bold">Work</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">sports_esports</span>
+<span class="font-label-bold text-label-bold">Games</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">article</span>
+<span class="font-label-bold text-label-bold">Blog</span>
+</div>
+</nav>
+<script>
+        // Simple micro-interactions for filters
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                if(btn.closest('section')) {
+                    document.querySelectorAll('section button').forEach(b => {
+                        b.classList.remove('active-filter');
+                        b.classList.add('bg-surface-container-low', 'border-transparent');
+                    });
+                    btn.classList.add('active-filter');
+                    btn.classList.remove('bg-surface-container-low', 'border-transparent');
+                }
+            });
+        });
+
+        // Sticky Nav logic
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            const nav = document.querySelector('nav.sticky');
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                nav.style.transform = 'translateY(-100%)';
+            } else {
+                nav.style.transform = 'translateY(0)';
+            }
+            nav.style.transition = 'transform 0.3s ease';
+            lastScroll = currentScroll;
+        });
+    </script>
+</body></html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;family=Syne:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-container": "#6d28d9",
+                    "tertiary-fixed-dim": "#ffb0cd",
+                    "primary-fixed-dim": "#d3bbff",
+                    "tertiary-container": "#ab0467",
+                    "inverse-on-surface": "#edf0ff",
+                    "primary": "#5300b7",
+                    "on-primary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "surface-container": "#e9edff",
+                    "surface": "#f9f9ff",
+                    "on-error-container": "#93000a",
+                    "tertiary": "#81004c",
+                    "surface-bright": "#f9f9ff",
+                    "inverse-surface": "#293040",
+                    "secondary-fixed-dim": "#4fdbc8",
+                    "surface-container-highest": "#dce2f7",
+                    "surface-container-high": "#e1e8fd",
+                    "secondary-fixed": "#71f8e4",
+                    "on-tertiary-fixed": "#3e0022",
+                    "surface-variant": "#dce2f7",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed": "#ffd9e4",
+                    "surface-container-low": "#f1f3ff",
+                    "outline-variant": "#ccc3d7",
+                    "on-tertiary-container": "#ffbcd4",
+                    "outline": "#7b7486",
+                    "on-surface": "#141b2b",
+                    "on-secondary-fixed": "#00201c",
+                    "on-primary-fixed": "#250059",
+                    "on-primary-container": "#dac5ff",
+                    "error": "#ba1a1a",
+                    "secondary-container": "#6df5e1",
+                    "on-tertiary-fixed-variant": "#8c0053",
+                    "inverse-primary": "#d3bbff",
+                    "on-primary-fixed-variant": "#5b00c5",
+                    "surface-dim": "#d3daef",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed": "#ebddff",
+                    "background": "#f9f9ff",
+                    "secondary": "#006b5f",
+                    "on-secondary-fixed-variant": "#005048",
+                    "on-secondary-container": "#006f64",
+                    "on-background": "#141b2b",
+                    "on-surface-variant": "#4a4455",
+                    "surface-tint": "#7331df",
+                    "on-tertiary": "#ffffff",
+                    "error-container": "#ffdad6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "stack-gap": "32px",
+                    "container-padding": "24px",
+                    "section-gap": "120px",
+                    "grid-gutter": "24px",
+                    "max-width": "1280px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Syne"],
+                    "headline-lg-mobile": ["Syne"],
+                    "display-xl": ["Syne"],
+                    "headline-lg": ["Syne"],
+                    "label-sm": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "label-bold": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "display-xl": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-bold": ["14px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .card-hover:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 8px 8px 0px 0px #141b2b;
+        }
+        .soft-brutal-border {
+            border: 2px solid #141b2b;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface selection:bg-secondary-container selection:text-on-secondary-container min-h-screen font-body-md">
+<!-- TopAppBar -->
+<nav class="sticky top-0 w-full bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md border-b-2 border-on-surface z-50">
+<div class="flex justify-between items-center px-grid-gutter py-4 max-w-max-width mx-auto">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="menu">menu</span>
+<span class="font-headline-md text-headline-md font-bold text-on-surface">Sama</span>
+</div>
+<div class="hidden md:flex items-center gap-stack-gap">
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#">Home</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#">Work</a>
+<a class="font-label-bold text-label-bold text-primary font-bold" href="#">Games</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#">Blog</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</nav>
+<main class="max-w-max-width mx-auto px-grid-gutter pb-section-gap">
+<!-- Hero Section -->
+<header class="py-section-gap flex flex-col md:flex-row items-end justify-between gap-8">
+<div class="max-w-2xl">
+<h1 class="font-display-xl text-display-xl mb-6">Play &amp; <br/><span class="text-primary-container">Explore.</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
+                    A curated shelf of micro-games designed to spark curiosity and test your reflexes. Welcome to the arcade of my imagination.
+                </p>
+</div>
+<div class="hidden lg:block relative">
+<div class="w-32 h-32 bg-secondary-container soft-brutal-border rounded-full flex items-center justify-center animate-bounce">
+<span class="material-symbols-outlined text-[64px]" data-icon="sports_esports" style="font-variation-settings: 'FILL' 1;">sports_esports</span>
+</div>
+</div>
+</header>
+<!-- Arcade Shelf Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-grid-gutter">
+<!-- Game Card 1 -->
+<article class="bg-primary-fixed soft-brutal-border rounded-lg overflow-hidden card-hover transition-all duration-300 flex flex-col">
+<div class="aspect-video relative overflow-hidden bg-on-primary-fixed">
+<img class="w-full h-full object-cover opacity-80" data-alt="A high-energy neon retro-wave visual style game screen featuring a stylized spaceship dodging geometric neon obstacles in deep purple and cyan colors. The lighting is dramatic and cinematic, with a grainy digital texture that evokes a high-quality indie game aesthetic. Vibrant energy pulses through the composition, mirroring a playful and competitive mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0YMxWgLkOykmwXNPdLE5Icp3W51tSL2rnySEQPIN2mtO3LQmCS3JbmbY-VFf6nAJixWGNn71FhoLTFe6Haxh1Ve26FKFSsLxSCg9YtNHF4sB7Grn6LR5sfGJ3ATI5ZDFbg8rLKGswgfxBLAE8i2ipkZhsDP5lhyh803gZCvVKHooYCpVi7qNT306nvT3IXMCg_bCkseCrcR6dgrc9V4Fl2l4uhahjGBTuf0aQhAtjpeRK9pWyUZXMAVwHJ1fU-HQZ6yeR967dKos"/>
+<div class="absolute top-4 left-4">
+<span class="bg-surface-container-lowest soft-brutal-border px-3 py-1 rounded-full font-label-bold text-label-bold text-on-surface">Reflex</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md mb-2">Neon Sprint</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">A high-speed rhythmic dodger where the environment reacts to your heartbeat. Don't blink.</p>
+<button class="bg-primary-container text-on-primary-container soft-brutal-border px-6 py-3 rounded-full font-label-bold text-label-bold hover:bg-secondary hover:text-on-secondary transition-all flex items-center justify-center gap-2 group active:scale-95">
+                        Play now
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- Game Card 2 -->
+<article class="bg-secondary-container soft-brutal-border rounded-lg overflow-hidden card-hover transition-all duration-300 flex flex-col">
+<div class="aspect-video relative overflow-hidden bg-on-secondary-fixed">
+<img class="w-full h-full object-cover opacity-80" data-alt="Minimalist abstract puzzle game environment with thick-bordered pastel colored cubes and floating spheres against a clean soft blue background. The scene is lit by warm, diffused overhead lighting that creates gentle shadows. The style is soft brutalism with a playful, toy-like feel, emphasizing clarity and tactile interaction through vibrant amber and teal accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPBtDfiIrLnXm_jNM5HAOU2kiqqjCDOOAjf8tZWe-akxAquymzbVsO6mLkrlqgEJ5MvtE5dmQrW-alebKBcXvD_OMqYgpldX663DDwv2zKnO83yCM6xPVlRd971gsP8TGe5AQf9wAeIS67us5iCYgNWZcXZmIdIm41_o0Z0nKNr8dvmwqnooivshHzs8Y8XqqKAbDFKoxGzq9kTdKimPPMnZHGZOSPWGFKxjAtfCXaslDeffcaK2pCmugVVsxeTwE4t3Z3H9_oUlM"/>
+<div class="absolute top-4 left-4">
+<span class="bg-surface-container-lowest soft-brutal-border px-3 py-1 rounded-full font-label-bold text-label-bold text-on-surface">Puzzle</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md mb-2">Cubis Logic</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">Rearrange the geometric fragments of a shattered world to restore the morning sun.</p>
+<button class="bg-primary-container text-on-primary-container soft-brutal-border px-6 py-3 rounded-full font-label-bold text-label-bold hover:bg-secondary hover:text-on-secondary transition-all flex items-center justify-center gap-2 group active:scale-95">
+                        Play now
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- Game Card 3 -->
+<article class="bg-tertiary-fixed soft-brutal-border rounded-lg overflow-hidden card-hover transition-all duration-300 flex flex-col">
+<div class="aspect-video relative overflow-hidden bg-on-tertiary-fixed">
+<img class="w-full h-full object-cover opacity-80" data-alt="A whimsical digital forest rendered in a paper-craft art style with vibrant pink trees and glowing teal mushrooms. Tiny, expressive creatures peek from behind thick-bordered shrubs. The lighting is magical and soft, giving a warm glow to the textures. This high-energy, imaginative scene captures a feeling of wonder and playful exploration in a modern, creative universe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuABP6A4DIt5wVRB-bbL5FH1dhHMYqr6u8hxkesKhaXVtP6iIQof8vL0Jdyf0ATqbT2Li3WviNVNsgLkKSWYTqNSSJ45j4GBphyex2Nqyy4IGSB1yUgufgEh9QY2rSdx4KFZyr7Ra1SOtgeE5FW49n414jQYUbt5_r8GryXBHUsxSOtXhiDsIjLqd5do131VKHwM4KV1HHGbPF6YzaqlF8qOjU0prSjdM4Ua3_WmkJ8GB3YZA8mf-9UQbkaZrog-9YTjFyOwSDOwqDA"/>
+<div class="absolute top-4 left-4">
+<span class="bg-surface-container-lowest soft-brutal-border px-3 py-1 rounded-full font-label-bold text-label-bold text-on-surface">Adventure</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md mb-2">Forest Echo</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">Guide the spirit of a lost paper fox through a shifting forest made of whispers.</p>
+<button class="bg-primary-container text-on-primary-container soft-brutal-border px-6 py-3 rounded-full font-label-bold text-label-bold hover:bg-secondary hover:text-on-secondary transition-all flex items-center justify-center gap-2 group active:scale-95">
+                        Play now
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- Game Card 4 -->
+<article class="bg-surface-container-high soft-brutal-border rounded-lg overflow-hidden card-hover transition-all duration-300 flex flex-col">
+<div class="aspect-video relative overflow-hidden bg-primary">
+<img class="w-full h-full object-cover opacity-80" data-alt="Stylized 2D platformer level design featuring bold outlines, chunky platforms, and vibrant amber and deep purple gradients. Animated energy particles float across the screen, which is illuminated by a high-contrast spotlight effect. The visual style is modern, energetic, and professional, blending comic-book aesthetics with high-fidelity digital art lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjeiodhb4kFwta5mH1lgR1iPg9CjfpWrZ6zKhz8sFYKlaWvWg-wGGkGXHXxud-AwwPcPTv-4YdNH1T7WJdXWTpoW8Y-JWtOvgVn5H4U4MBk9C_P7ea8FVog_h39WOzNMLTVh2qJWBmbk7wUoyYsJS9qw9AQvoxcGkP8nCIj6bl4VsmOauqaEidogm5A4B10pYbnhMQwwPQKBJY5IQcqbjy8sEURTsbIkdKHeWqrhpxhx1XgcIcrETVr3FZ3FLQLcQiV0N65NqMflo"/>
+<div class="absolute top-4 left-4">
+<span class="bg-surface-container-lowest soft-brutal-border px-3 py-1 rounded-full font-label-bold text-label-bold text-on-surface">Platform</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md mb-2">Jump Jive</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">Gravity is just a suggestion. Leap across floating cities to reach the floating peak.</p>
+<button class="bg-primary-container text-on-primary-container soft-brutal-border px-6 py-3 rounded-full font-label-bold text-label-bold hover:bg-secondary hover:text-on-secondary transition-all flex items-center justify-center gap-2 group active:scale-95">
+                        Play now
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- Game Card 5 -->
+<article class="bg-secondary-fixed soft-brutal-border rounded-lg overflow-hidden card-hover transition-all duration-300 flex flex-col">
+<div class="aspect-video relative overflow-hidden bg-on-secondary-fixed">
+<img class="w-full h-full object-cover opacity-80" data-alt="An artistic representation of a coding-themed micro-game, showing glowing lines of colorful syntax transforming into a 3D architecture of blocks. The scene is set in a dark digital void with high-contrast primary color accents. The aesthetic is sleek, technologically advanced, and energetic, focusing on high-impact visual storytelling through structural geometric shapes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIMI18SrCr8wDoNeWquHpUx74wuTBlnNmGgB_xn2s9azZy7H2Qy0Xqc9GtQFwvIWn9oeCqkIAX3haAv8zDOSQJvHXrUgddCBVKDj1zggVHNz4YoUZdNu8yRMn2PShGQEJ1UhqQH7VrlZr7zpo_t-lz4TS8Ov0BNW68VWQdcVMcw-fBysX1rXHiwq9mCn2cxr1BgUBIl5Jz9vUxlRU2jPg5k67QwhQ-EPjLdvbRZu2mKAoWOV7pLQ9j4KiYHC27DE67YRGH8wOci_c"/>
+<div class="absolute top-4 left-4">
+<span class="bg-surface-container-lowest soft-brutal-border px-3 py-1 rounded-full font-label-bold text-label-bold text-on-surface">Logic</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md mb-2">Syntax Run</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">Debug the mainframe by aligning code segments in real-time. Speed is accuracy.</p>
+<button class="bg-primary-container text-on-primary-container soft-brutal-border px-6 py-3 rounded-full font-label-bold text-label-bold hover:bg-secondary hover:text-on-secondary transition-all flex items-center justify-center gap-2 group active:scale-95">
+                        Play now
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- Game Card 6 -->
+<article class="bg-on-primary-container soft-brutal-border rounded-lg overflow-hidden card-hover transition-all duration-300 flex flex-col">
+<div class="aspect-video relative overflow-hidden bg-primary-container">
+<img class="w-full h-full object-cover opacity-80" data-alt="Close-up of a high-energy card battle game interface with vibrantly illustrated character cards featuring thick black borders and vivid neon effects. The table is a dark obsidian surface reflecting the glowing card edges. The mood is intense and competitive, utilizing a palette of deep purple, electric blue, and hot pink to create a professional creative identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCC_k6W3HSMSbmAbFmCqj7p4GmI8YokYRTDeK2fOBg_6gaRZrdyCBpwhkJIWYEJxguSHXAB1CAXrK8_m8CMVmWUH85tt8fB6WPgB8_MwOCNuMOET8UvSXGd-WVRraIDKXTEiQAQNVUw9ZEqB0fVeq_sfdiErS5ITD1G3qAjmaCoZh90weFmIG1FaGV5ZntRK3aJz3ocbLceDTk_TiWXAnwZGLHPwAn0YH9XgY_8f0QiqSCA1Iw7kDEjF4i6ltD2p8OBQAn3x7Ur49g"/>
+<div class="absolute top-4 left-4">
+<span class="bg-surface-container-lowest soft-brutal-border px-3 py-1 rounded-full font-label-bold text-label-bold text-on-surface">Cards</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md mb-2">Void Duel</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">A strategic card battler where you sacrifice memories to gain cosmic powers.</p>
+<button class="bg-primary-container text-on-primary-container soft-brutal-border px-6 py-3 rounded-full font-label-bold text-label-bold hover:bg-secondary hover:text-on-secondary transition-all flex items-center justify-center gap-2 group active:scale-95">
+                        Play now
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</article>
+</section>
+<!-- Bento Style Stats Section -->
+<section class="mt-section-gap grid grid-cols-1 md:grid-cols-4 gap-grid-gutter">
+<div class="md:col-span-2 p-8 bg-surface-container soft-brutal-border rounded-lg flex flex-col justify-between">
+<div>
+<span class="font-label-bold text-label-bold text-primary mb-4 block">Leaderboard</span>
+<h2 class="font-headline-lg text-headline-lg mb-6">Top Gamers</h2>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-3 bg-surface-bright soft-brutal-border rounded-full">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center font-bold">1</span>
+<span class="font-label-bold text-label-bold">PixeLord_99</span>
+</div>
+<span class="font-bold text-primary">12,400 pts</span>
+</div>
+<div class="flex items-center justify-between p-3 bg-surface-bright soft-brutal-border rounded-full">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-full bg-tertiary-fixed flex items-center justify-center font-bold">2</span>
+<span class="font-label-bold text-label-bold">NeoGlitch</span>
+</div>
+<span class="font-bold text-primary">11,850 pts</span>
+</div>
+</div>
+</div>
+<div class="p-8 bg-primary-container text-on-primary-container soft-brutal-border rounded-lg flex flex-col items-center justify-center text-center gap-4">
+<span class="material-symbols-outlined text-[48px]" data-icon="rocket_launch">rocket_launch</span>
+<div>
+<div class="font-display-xl text-[48px] leading-none mb-1">42</div>
+<div class="font-label-bold text-label-bold opacity-80">Games Online</div>
+</div>
+</div>
+<div class="p-8 bg-secondary-container soft-brutal-border rounded-lg flex flex-col items-center justify-center text-center gap-4">
+<span class="material-symbols-outlined text-[48px]" data-icon="group">group</span>
+<div>
+<div class="font-display-xl text-[48px] leading-none mb-1">1.2k</div>
+<div class="font-label-bold text-label-bold opacity-80">Active Players</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-surface-container dark:bg-inverse-surface rounded-t-lg border-t-2 border-on-surface">
+<div class="flex flex-col md:flex-row justify-between items-center px-grid-gutter py-stack-gap max-w-max-width mx-auto mt-section-gap">
+<div class="flex flex-col gap-2 mb-6 md:mb-0">
+<span class="font-headline-md text-headline-md text-on-surface font-bold">Sama</span>
+<p class="font-body-md text-body-md text-on-surface-variant">© 2024 Sama. Crafted with imagination.</p>
+</div>
+<div class="flex gap-stack-gap">
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-tertiary transition-all hover:-translate-y-1" href="#">Twitter</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-tertiary transition-all hover:-translate-y-1" href="#">Dribbble</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-tertiary transition-all hover:-translate-y-1" href="#">LinkedIn</a>
+</div>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex md:hidden justify-around items-center px-4 py-3 bg-surface/90 backdrop-blur-lg border-t-2 border-on-surface">
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-bold text-[10px]">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-label-bold text-[10px]">Work</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 border-2 border-on-surface active:scale-95 transition-transform duration-100">
+<span class="material-symbols-outlined" data-icon="sports_esports" style="font-variation-settings: 'FILL' 1;">sports_esports</span>
+<span class="font-label-bold text-[10px]">Games</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="article">article</span>
+<span class="font-label-bold text-[10px]">Blog</span>
+</div>
+</nav>
+<script>
+        // Simple hover effect for interactive elements
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('mouseenter', () => {
+                button.style.transform = 'translate(-2px, -2px)';
+                button.style.boxShadow = '4px 4px 0px 0px #141b2b';
+            });
+            button.addEventListener('mouseleave', () => {
+                button.style.transform = 'translate(0, 0)';
+                button.style.boxShadow = 'none';
+            });
+        });
+    </script>
+</body></html>
