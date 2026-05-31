@@ -2,6 +2,7 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
+    { "source": "/games/poof", "destination": "/games/poof/index.html" },
     { "source": "/games/poof/(.*)", "destination": "/games/poof/index.html" }
   ]
 }
